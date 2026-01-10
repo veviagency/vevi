@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Users, Zap } from "lucide-react";
+import { ArrowRight, Users, Zap, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border mb-8 animate-fade-in">
-            <Shield size={16} className="text-primary" />
+            <Award size={16} className="text-primary" />
             <span className="text-sm font-medium text-muted-foreground">
               Exclusively for US Orthodontic Clinics
             </span>
@@ -56,8 +56,8 @@ const Hero = () => {
               <span className="text-sm font-medium">AI-Powered Automation</span>
             </div>
             <div className="flex items-center justify-center gap-3 text-muted-foreground">
-              <Shield size={20} className="text-primary" />
-              <span className="text-sm font-medium">HIPAA Compliant</span>
+              <Award size={20} className="text-primary" />
+              <span className="text-sm font-medium">Orthodontist-Specialized</span>
             </div>
           </div>
         </div>
