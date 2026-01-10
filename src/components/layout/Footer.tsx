@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, Linkedin, Instagram } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
-
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground">
       <div className="container-wide py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <img src={logoWhite} alt="Vevi Agency" className="h-12 w-auto" />
+              <img src={logoWhite} alt="Vevi Agency" className="h-40 md:h-40 w-auto" />
             </Link>
             <p className="text-primary-foreground/80 max-w-md leading-relaxed">
               The growth partner for independent orthodontic clinics. We combine AI automation with specialized marketing to help you attract and convert more patients.
@@ -49,40 +47,22 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="mailto:hello@vevi.co"
-                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <a href="mailto:hello@vevi.co" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   <Mail size={16} />
                   hello@vevi.co
                 </a>
               </li>
               <li>
-                <a
-                  href="tel:+15551234567"
-                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <a href="tel:+15551234567" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   <Phone size={16} />
                   (555) 123-4567
                 </a>
               </li>
               <li className="flex gap-4 pt-2">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                  aria-label="LinkedIn"
-                >
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                  aria-label="Instagram"
-                >
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
               </li>
@@ -96,8 +76,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
