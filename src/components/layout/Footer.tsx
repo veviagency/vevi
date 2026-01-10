@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, Linkedin, Instagram } from "lucide-react";
+import logoWhite from "@/assets/logo-white.png";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <span className="text-3xl font-serif font-bold">Vevi</span>
+              <img src={logoWhite} alt="Vevi Agency" className="h-12 w-auto" />
             </Link>
             <p className="text-primary-foreground/80 max-w-md leading-relaxed">
               The growth partner for independent orthodontic clinics. We combine AI automation with specialized marketing to help you attract and convert more patients.
