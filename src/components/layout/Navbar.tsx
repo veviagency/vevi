@@ -23,12 +23,8 @@ const Navbar = () => {
       <div className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center -my-2">
-            <img 
-              alt="Vevi Agency" 
-              className="h-20 md:h-24 w-auto" 
-              src={logoDark}
-            />
+          <Link to="/" className="flex items-center">
+            <img alt="Vevi Agency" className="h-10 md:h-12 w-auto rounded-full shadow-none opacity-100 border-solid border-primary border-0" src="/lovable-uploads/f436e2c3-395d-434f-a3e5-ce0273dbf408.png" />
           </Link>
 
           {/* Desktop Navigation */}
