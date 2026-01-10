@@ -24,11 +24,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center -my-2">
-            <img 
-              alt="Vevi Agency" 
-              className="h-20 md:h-24 w-auto" 
-              src={logoDark}
-            />
+            <img alt="Vevi Agency" src="/lovable-uploads/7163ca81-5ccf-4b12-8bf3-c99481453e9c.png" className="h-40 md:h-40 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
