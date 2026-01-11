@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, Linkedin, Instagram } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook, Youtube } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
 const Footer = () => {
   return <footer className="bg-primary text-primary-foreground">
       <div className="container-wide py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div>
             <Link to="/" className="inline-block mb-4">
               <img src={logoWhite} alt="Vevi Agency" className="h-40 md:h-40 w-auto" />
             </Link>
@@ -15,55 +15,31 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h4 className="font-semibold mb-4">Navigation</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/why-vevi" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Why Vevi
-                </Link>
-              </li>
-              <li>
-                <Link to="/what-we-do" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  What We Do
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:hello@vevi.co" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="mailto:kursat@veviagency.com" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   <Mail size={16} />
-                  hello@vevi.co
+                  kursat@veviagency.com
                 </a>
               </li>
               <li>
-                <a href="tel:+15551234567" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="tel:+905010626030" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   <Phone size={16} />
-                  (555) 123-4567
+                  +90 501 062 60 30
                 </a>
               </li>
               <li className="flex gap-4 pt-2">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="LinkedIn">
-                  <Linkedin size={20} />
-                </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Instagram">
                   <Instagram size={20} />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Facebook">
+                  <Facebook size={20} />
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="YouTube">
+                  <Youtube size={20} />
                 </a>
               </li>
             </ul>
