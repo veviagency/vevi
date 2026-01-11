@@ -1,16 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Heart, Gift, Quote, Shield, Users, Target } from "lucide-react";
+import Layout from "@/components/layout/Layout";
 
 const ColdEmailLanding = () => {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Minimal Header */}
-      <header className="py-6 border-b border-border">
-        <div className="container-wide">
-          <span className="text-2xl font-serif font-bold text-primary">Vevi</span>
-        </div>
-      </header>
-
+    <Layout hideNavLinks hideFooter>
       {/* Hero Section */}
       <section className="section-padding bg-secondary">
         <div className="container-tight text-center">
@@ -238,7 +232,7 @@ const ColdEmailLanding = () => {
           </p>
         </div>
       </footer>
-    </div>
+    </Layout>
   );
 };
 
