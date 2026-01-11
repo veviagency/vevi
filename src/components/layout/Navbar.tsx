@@ -16,7 +16,12 @@ const navLinks = [{
   href: "/contact",
   label: "Contact"
 }];
-const Navbar = () => {
+
+interface NavbarProps {
+  hideNavLinks?: boolean;
+}
+
+const Navbar = ({ hideNavLinks = false }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   return <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -28,11 +33,13 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map(link => <Link key={link.href} to={link.href} className={`text-sm font-medium transition-colors duration-200 ${location.pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}>
-                {link.label}
-              </Link>)}
-          </div>
+          {!hideNavLinks && (
+            <div className="hidden md:flex items-center space-x-8">
+              {navLinks.map(link => <Link key={link.href} to={link.href} className={`text-sm font-medium transition-colors duration-200 ${location.pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}>
+                  {link.label}
+                </Link>)}
+            </div>
+          )}
 
           {/* CTA Button */}
           <div className="hidden md:block">
@@ -42,13 +49,24 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2 text-foreground" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {!hideNavLinks && (
+            <button className="md:hidden p-2 text-foreground" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          )}
+
+          {/* Mobile CTA when nav links hidden */}
+          {hideNavLinks && (
+            <div className="md:hidden">
+              <Button variant="hero" size="sm" asChild>
+                <Link to="/contact">Book a Call</Link>
+              </Button>
+            </div>
+          )}
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && <div className="md:hidden py-4 border-t border-border animate-fade-in">
+        {!hideNavLinks && isOpen && <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col space-y-4">
               {navLinks.map(link => <Link key={link.href} to={link.href} className={`text-base font-medium px-2 py-2 transition-colors ${location.pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"}`} onClick={() => setIsOpen(false)}>
                   {link.label}
