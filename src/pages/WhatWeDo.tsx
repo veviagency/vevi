@@ -1,5 +1,4 @@
 import Layout from "@/components/layout/Layout";
-import CTA from "@/components/sections/CTA";
 import { MessageSquare, Phone, Target, CheckCircle, Shield, Zap, Users, BarChart } from "lucide-react";
 
 const WhatWeDo = () => {
@@ -291,7 +290,6 @@ const WhatWeDo = () => {
         </div>
       </section>
 
-      <CTA />
     </Layout>
   );
 };

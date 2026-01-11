@@ -1,5 +1,4 @@
 import Layout from "@/components/layout/Layout";
-import CTA from "@/components/sections/CTA";
 import { Heart, Quote } from "lucide-react";
 
 const WhyVevi = () => {
@@ -123,7 +122,6 @@ const WhyVevi = () => {
         </div>
       </section>
 
-      <CTA />
     </Layout>
   );
 };
