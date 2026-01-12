@@ -47,16 +47,16 @@ const WhyVevi = () => {
               </div>
             </div>
 
-            {/* Video Placeholder */}
-            <div className="bg-secondary rounded-2xl aspect-video flex items-center justify-center mb-12 border border-border">
-              <div className="text-center p-8">
-                <Quote className="w-12 h-12 text-primary/40 mx-auto mb-4" />
-                <p className="text-muted-foreground font-medium mb-2">
-                  Video: Why I Started Vevi
-                </p>
-                <p className="text-sm text-muted-foreground/70">
-                  Coming soon — a 2-3 minute personal story
-                </p>
+            {/* Video */}
+            <div className="rounded-2xl overflow-hidden mb-12 border border-border">
+              <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/ipZ_die5N7Q"
+                  title="Why I Started Vevi"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
 
