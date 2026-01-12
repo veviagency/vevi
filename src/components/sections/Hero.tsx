@@ -35,10 +35,10 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up" style={{ animationDelay: "0.2s" }}>
             <Button variant="hero" size="xl" asChild>
-              <Link to="/contact">
+              <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">
                 Book Your Free Consultation
                 <ArrowRight size={20} />
-              </Link>
+              </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
               <Link to="/what-we-do">See How It Works</Link>

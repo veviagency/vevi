@@ -31,10 +31,10 @@ const CTA = ({
           className="bg-accent text-foreground hover:bg-accent/90"
           asChild
         >
-          <Link to={primaryButtonLink}>
+          <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">
             {primaryButtonText}
             <ArrowRight size={20} />
-          </Link>
+          </a>
         </Button>
         <p className="text-primary-foreground/60 text-sm mt-6">
           No pressure. No obligations. Just a conversation.

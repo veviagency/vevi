@@ -44,7 +44,7 @@ const Navbar = ({ hideNavLinks = false }: NavbarProps) => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="hero" asChild>
-              <Link to="/contact">Book a Call</Link>
+              <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">Book a Call</a>
             </Button>
           </div>
 
@@ -59,7 +59,7 @@ const Navbar = ({ hideNavLinks = false }: NavbarProps) => {
           {hideNavLinks && (
             <div className="md:hidden">
               <Button variant="hero" size="sm" asChild>
-                <Link to="/contact">Book a Call</Link>
+                <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">Book a Call</a>
               </Button>
             </div>
           )}
@@ -72,9 +72,9 @@ const Navbar = ({ hideNavLinks = false }: NavbarProps) => {
                   {link.label}
                 </Link>)}
               <Button variant="hero" className="mt-4" asChild>
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                   Book a Call
-                </Link>
+                </a>
               </Button>
             </div>
           </div>}
