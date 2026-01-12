@@ -1,8 +1,6 @@
 import { CheckCircle, Building2, Heart } from "lucide-react";
-
 const WhyUs = () => {
-  return (
-    <section className="section-padding bg-secondary">
+  return <section className="section-padding bg-secondary">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -64,16 +62,14 @@ const WhyUs = () => {
                   <span className="text-primary font-semibold">V</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">The Vevi Team</p>
-                  <p className="text-sm text-muted-foreground">Your Growth Partner</p>
+                  <p className="font-semibold text-foreground">​Kursat Per - VeVi  </p>
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyUs;
