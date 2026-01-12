@@ -53,17 +53,24 @@ const WhyUs = () => {
 
           {/* Visual */}
           <div className="relative">
-            <div className="bg-card rounded-3xl p-8 md:p-12 card-elevated border border-border">
-              <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-6">
+            <div className="bg-card rounded-3xl p-8 md:p-12 pb-16 md:pb-20 card-elevated border border-border">
+              <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8">
                 "We don't try to be everything to everyone. We chose to become experts in one thing — helping orthodontists like you grow your practice with the same care you give your patients."
               </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-primary font-semibold">V</span>
+              <div className="flex items-center gap-5">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-muted flex items-center justify-center overflow-hidden border-2 border-primary/20">
+                  <img 
+                    src="/lovable-uploads/founder-photo.png" 
+                    alt="Kursat Per"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.parentElement!.innerHTML = '<span class="text-muted-foreground text-sm">Photo</span>';
+                    }}
+                  />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">​Kursat Per - VeVi  </p>
-                  
+                  <p className="font-semibold text-foreground text-lg md:text-xl">Kursat Per - VeVi</p>
                 </div>
               </div>
             </div>
