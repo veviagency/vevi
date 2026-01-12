@@ -24,9 +24,11 @@ const ColdEmailLanding = () => {
             We only work with orthodontists with fewer than 5 locations.
           </p>
 
-          <Button variant="hero" size="xl" className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            Book Your Free 30-Minute Call
-            <ArrowRight size={20} />
+          <Button variant="hero" size="xl" className="animate-slide-up" style={{ animationDelay: "0.2s" }} asChild>
+            <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">
+              Book Your Free 30-Minute Call
+              <ArrowRight size={20} />
+            </a>
           </Button>
         </div>
       </section>
@@ -214,9 +216,12 @@ const ColdEmailLanding = () => {
             variant="accent"
             size="xl"
             className="bg-accent text-foreground hover:bg-accent/90"
+            asChild
           >
-            Book Your Free 30-Minute Call
-            <ArrowRight size={20} />
+            <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">
+              Book Your Free 30-Minute Call
+              <ArrowRight size={20} />
+            </a>
           </Button>
           <p className="text-primary-foreground/60 text-sm mt-6">
             We only work with US orthodontists with fewer than 5 locations.
