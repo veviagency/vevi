@@ -1,6 +1,11 @@
 import { CheckCircle, Building2, Heart } from "lucide-react";
-const WhyUs = () => {
-  return <section className="section-padding bg-secondary">
+
+interface WhyUsProps {
+  variant?: "default" | "light";
+}
+
+const WhyUs = ({ variant = "default" }: WhyUsProps) => {
+  return <section className={`section-padding ${variant === "light" ? "bg-background" : "bg-secondary"}`}>
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}

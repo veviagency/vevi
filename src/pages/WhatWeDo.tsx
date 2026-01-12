@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import WhyUs from "@/components/sections/WhyUs";
 import { MessageSquare, Phone, Target, CheckCircle, Shield, Zap, Users, BarChart } from "lucide-react";
 
 const WhatWeDo = () => {
@@ -289,6 +290,9 @@ const WhatWeDo = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Us Section */}
+      <WhyUs />
 
     </Layout>
   );

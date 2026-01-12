@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import WhyUs from "@/components/sections/WhyUs";
 import { Heart, Quote } from "lucide-react";
 
 const WhyVevi = () => {
@@ -121,6 +122,9 @@ const WhyVevi = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Us Section */}
+      <WhyUs variant="light" />
 
     </Layout>
   );
