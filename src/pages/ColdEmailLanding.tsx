@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Heart, Gift, Quote, Shield, Users, Target } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-
 const ColdEmailLanding = () => {
-  return (
-    <Layout hideNavLinks hideFooter>
+  return <Layout hideNavLinks hideFooter>
       {/* Hero Section */}
       <section className="section-padding bg-secondary">
         <div className="container-tight text-center">
@@ -20,11 +18,15 @@ const ColdEmailLanding = () => {
             <span className="text-gradient">AI & Ads</span>
           </h1>
 
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up" style={{
+          animationDelay: "0.1s"
+        }}>
             We only work with orthodontists with fewer than 5 locations.
           </p>
 
-          <Button variant="hero" size="xl" className="animate-slide-up" style={{ animationDelay: "0.2s" }} asChild>
+          <Button variant="hero" size="xl" className="animate-slide-up" style={{
+          animationDelay: "0.2s"
+        }} asChild>
             <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">
               Book Your Free 30-Minute Call
               <ArrowRight size={20} />
@@ -189,16 +191,11 @@ const ColdEmailLanding = () => {
             {/* Photo placeholder */}
             <div className="flex flex-col items-center gap-3 flex-shrink-0">
               <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-card border-4 border-primary/20 flex items-center justify-center overflow-hidden card-elevated">
-                <img 
-                  src="/lovable-uploads/founder-photo.png" 
-                  alt="In his office, with Dr. Murat Kaptac"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    target.parentElement!.innerHTML = '<span class="text-primary font-semibold text-4xl">MK</span>';
-                  }}
-                />
+                <img alt="In his office, with Dr. Murat Kaptac" className="w-full h-full object-cover" onError={e => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                target.parentElement!.innerHTML = '<span class="text-primary font-semibold text-4xl">MK</span>';
+              }} src="/lovable-uploads/69a88413-4232-4b17-b2c5-f0927dbec0ae.jpg" />
               </div>
               <p className="text-sm text-muted-foreground text-center italic">
                 In his office, with Dr. Murat Kaptac.
@@ -234,12 +231,7 @@ const ColdEmailLanding = () => {
           <p className="text-lg text-primary-foreground/80 max-w-xl mx-auto mb-8">
             30 minutes. No pressure. No pitch. Just a real conversation about your practice — plus a custom landing page as our gift to you.
           </p>
-          <Button
-            variant="accent"
-            size="xl"
-            className="bg-accent text-foreground hover:bg-accent/90"
-            asChild
-          >
+          <Button variant="accent" size="xl" className="bg-accent text-foreground hover:bg-accent/90" asChild>
             <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">
               Book Your Free 30-Minute Call
               <ArrowRight size={20} />
@@ -259,8 +251,6 @@ const ColdEmailLanding = () => {
           </p>
         </div>
       </footer>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default ColdEmailLanding;
