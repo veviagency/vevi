@@ -185,18 +185,40 @@ const ColdEmailLanding = () => {
       {/* Testimonial Section */}
       <section className="section-padding bg-secondary">
         <div className="container-tight">
-          <div className="max-w-3xl mx-auto bg-card rounded-3xl p-8 md:p-12 border border-border card-elevated">
-            <Quote className="text-primary/20 mb-6" size={40} />
-            <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8">
-              "Working with Vevi was different from day one. They actually understood what it's like to run an orthodontic practice. Their AI tools and marketing didn't feel generic — everything was tailored to how our patients think and what they need to hear."
-            </blockquote>
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center">
-                <span className="text-primary font-semibold text-lg">DS</span>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
+            {/* Photo placeholder */}
+            <div className="flex flex-col items-center gap-3 flex-shrink-0">
+              <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-card border-4 border-primary/20 flex items-center justify-center overflow-hidden card-elevated">
+                <img 
+                  src="/lovable-uploads/founder-photo.png" 
+                  alt="In his office, with Dr. Murat Kaptac"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.innerHTML = '<span class="text-primary font-semibold text-4xl">MK</span>';
+                  }}
+                />
               </div>
-              <div>
-                <p className="font-semibold text-foreground">Dr. Sarah Mitchell</p>
-                <p className="text-sm text-muted-foreground">Mitchell Orthodontics, Austin TX</p>
+              <p className="text-sm text-muted-foreground text-center italic">
+                In his office, with Dr. Murat Kaptac.
+              </p>
+            </div>
+
+            {/* Testimonial card */}
+            <div className="bg-card rounded-3xl p-8 md:p-12 border border-border card-elevated flex-1">
+              <Quote className="text-primary/20 mb-6" size={40} />
+              <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8">
+                "Working with Vevi was different from day one. They actually understood what it's like to run an orthodontic practice. Their AI tools and marketing didn't feel generic — everything was tailored to how our patients think and what they need to hear."
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center">
+                  <span className="text-primary font-semibold text-lg">MK</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">Dr. Murat Kaptac</p>
+                  <p className="text-sm text-muted-foreground">Founder - MK Aligners</p>
+                </div>
               </div>
             </div>
           </div>
