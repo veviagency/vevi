@@ -206,7 +206,7 @@ const ColdEmailLanding = () => {
             <div className="bg-card rounded-3xl p-8 md:p-12 border border-border card-elevated flex-1">
               <Quote className="text-primary/20 mb-6" size={40} />
               <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8 text-justify">
-                "Because of how competitive our market is, I've worked with many agencies and freelancers over the years. It's easy to tell the average providers from the ones who consistently go the extra mile. With VeVi, I saw that firsthand: attention to detail, constant learning (even from competitors), and a genuine client-first mindset. It was a pleasure working together."
+                Because of how competitive our market is, I've worked with many agencies and freelancers over the years. It's easy to tell the average providers from the ones who consistently go the extra mile. With VeVi, I saw that firsthand: attention to detail, constant learning (even from competitors), and a genuine client-first mindset. It was a pleasure working together.
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center">
