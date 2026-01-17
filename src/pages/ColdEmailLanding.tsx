@@ -186,15 +186,15 @@ const ColdEmailLanding = () => {
 
       {/* Testimonial Section */}
       <section className="section-padding bg-secondary">
-        <div className="container-tight">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
-            {/* Photo placeholder */}
+        <div className="container-wide">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+            {/* Photo placeholder - aligned with footer logo */}
             <div className="flex flex-col items-center gap-3 flex-shrink-0">
-              <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-card border-4 border-primary/20 flex items-center justify-center overflow-hidden card-elevated">
+              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-card border-4 border-primary/20 flex items-center justify-center overflow-hidden card-elevated">
                 <img alt="In his office, with Dr. Murat Kaptac" className="w-full h-full object-cover" onError={e => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
-                target.parentElement!.innerHTML = '<span class="text-primary font-semibold text-4xl">MK</span>';
+                target.parentElement!.innerHTML = '<span class="text-primary font-semibold text-6xl">MK</span>';
               }} src="/lovable-uploads/69a88413-4232-4b17-b2c5-f0927dbec0ae.jpg" />
               </div>
               <p className="text-sm text-muted-foreground text-center italic">
@@ -205,8 +205,8 @@ const ColdEmailLanding = () => {
             {/* Testimonial card */}
             <div className="bg-card rounded-3xl p-8 md:p-12 border border-border card-elevated flex-1">
               <Quote className="text-primary/20 mb-6" size={40} />
-              <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8">
-                "Working with Vevi was different from day one. They actually understood what it's like to run an orthodontic practice. Their AI tools and marketing didn't feel generic — everything was tailored to how our patients think and what they need to hear."
+              <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8 text-justify">
+                "Because of how competitive our market is, I've worked with many agencies and freelancers over the years. It's easy to tell the average providers from the ones who consistently go the extra mile. With VeVi, I saw that firsthand: attention to detail, constant learning (even from competitors), and a genuine client-first mindset. It was a pleasure working together."
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center">
