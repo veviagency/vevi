@@ -96,7 +96,7 @@ const ColdEmailLanding = () => {
                 <Heart className="text-primary" size={24} />
               </div>
               <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                Why Orthodontics?
+                Why We Work With Only Orthodontists ?
               </span>
             </div>
 
