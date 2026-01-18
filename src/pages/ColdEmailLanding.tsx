@@ -96,7 +96,7 @@ const ColdEmailLanding = () => {
                 <Heart className="text-primary" size={24} />
               </div>
               <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                Why We Work With Only Orthodontists ?
+                Why We Work Only With Orthodontists
               </span>
             </div>
 
@@ -104,13 +104,17 @@ const ColdEmailLanding = () => {
               <Quote className="text-primary/20 mb-6" size={48} />
               <div className="space-y-4 text-lg text-foreground leading-relaxed">
                 <p>
-                  My father struggled with severe dental problems for over three years. It affected everything — his ability to eat, his confidence, his quality of life.
+                  My father struggled with dental issues for years. <br />
+                  It affected everything: how he ate, his confidence, and his quality of life.
                 </p>
                 <p>
-                  When he finally needed a tooth removed and replaced with an implant, a small group of dedicated orthodontists changed everything for him.
+                  When he finally met a dedicated orthodontic team, I watched his life change. <br />
+                  He didn’t just feel better, <br /> 
+                  He got his joy back...
                 </p>
                 <p className="font-medium text-primary">
-                  Those weren't corporate practitioners. They were skilled professionals who genuinely cared. That's why I choose to help orthodontists like them — like you — reach more patients who need their expertise.
+                  That’s why we work only with orthodontists like you— <br />
+                  Helping you reach and convert the patients who need your expertise.
                 </p>
               </div>
             </div>
