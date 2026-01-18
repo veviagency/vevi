@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import WhyUs from "@/components/sections/WhyUs";
+import ServiceShowcase from "@/components/sections/ServiceShowcase";
 import { MessageSquare, Phone, Target, CheckCircle, Shield, Zap, Users, BarChart } from "lucide-react";
 
 const WhatWeDo = () => {
@@ -97,6 +98,20 @@ const WhatWeDo = () => {
         </div>
       </section>
 
+      {/* OrthoBot Showcase Section */}
+      <ServiceShowcase
+        leftImagePlaceholder="OrthoBot answering patient questions in real-time"
+        rightImagePlaceholder="Lead information captured automatically"
+        title="OrthoBot in Action"
+        description="Watch how OrthoBot transforms website visitors into qualified leads through natural, engaging conversations."
+        features={[
+          "Instant response to patient inquiries",
+          "Seamless lead information capture",
+          "24/7 availability for your clinic",
+          "Personalized conversation flow"
+        ]}
+      />
+
       {/* OrthoCall Section */}
       <section className="section-padding bg-secondary" id="orthocall">
         <div className="container-wide">
@@ -188,6 +203,20 @@ const WhatWeDo = () => {
           </div>
         </div>
       </section>
+
+      {/* OrthoCall Showcase Section */}
+      <ServiceShowcase
+        leftImagePlaceholder="AI making calls to new leads automatically"
+        rightImagePlaceholder="Appointments booked directly in your calendar"
+        title="OrthoCall in Action"
+        description="See how OrthoCall follows up with leads within minutes and books consultations using natural voice technology."
+        features={[
+          "Immediate follow-up on new leads",
+          "Natural voice conversations",
+          "Direct calendar integration",
+          "Full call documentation"
+        ]}
+      />
 
       {/* Marketing Section */}
       <section className="section-padding bg-background" id="marketing">
