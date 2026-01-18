@@ -1,5 +1,4 @@
-import { ArrowDown } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 
 interface ServiceShowcaseProps {
   leftImagePlaceholder: string;
@@ -7,6 +6,7 @@ interface ServiceShowcaseProps {
   title: string;
   description: string;
   features: string[];
+  variant?: "default" | "alternate";
 }
 
 const ServiceShowcase = ({
@@ -15,78 +15,51 @@ const ServiceShowcase = ({
   title,
   description,
   features,
+  variant = "default",
 }: ServiceShowcaseProps) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [visibility, setVisibility] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Calculate how much of the section is in view
-      const sectionTop = rect.top;
-      const sectionBottom = rect.bottom;
-      const sectionHeight = rect.height;
-      
-      // Start fading in when section enters viewport from bottom
-      // Full visibility when section is centered
-      // Start fading out when section leaves viewport from top
-      
-      if (sectionBottom < 0 || sectionTop > windowHeight) {
-        // Completely out of view
-        setVisibility(0);
-      } else if (sectionTop >= 0 && sectionBottom <= windowHeight) {
-        // Fully in view
-        setVisibility(1);
-      } else if (sectionTop < 0) {
-        // Scrolling out from top
-        const visiblePortion = sectionBottom / sectionHeight;
-        setVisibility(Math.max(0, Math.min(1, visiblePortion)));
-      } else {
-        // Scrolling in from bottom
-        const visiblePortion = (windowHeight - sectionTop) / sectionHeight;
-        setVisibility(Math.max(0, Math.min(1, visiblePortion)));
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
-    
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <section 
-      ref={sectionRef}
-      className="relative py-20 bg-muted/30 overflow-hidden"
-      style={{
-        opacity: visibility,
-        transform: `translateY(${(1 - visibility) * 30}px) scale(${0.95 + visibility * 0.05})`,
-        transition: 'opacity 0.1s ease-out, transform 0.1s ease-out',
-      }}
-    >
-      {/* Navigation Path - Vertical lines on left and right with arrows */}
+    <section className="relative py-20 bg-muted/30 overflow-hidden">
+      {/* Navigation Path SVG - Background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Left vertical line - in the middle between edge and left photo */}
-        <div className="absolute left-[8%] md:left-[12%] top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/15 to-primary/20" />
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 1200 400"
+          preserveAspectRatio="none"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Main path: starts from top-left, goes down, turns right, goes to right side, turns down */}
+          <path
+            d="M 60 0 L 60 200 L 1140 200 L 1140 400"
+            stroke="hsl(var(--primary) / 0.15)"
+            strokeWidth="3"
+            strokeDasharray="8 4"
+            fill="none"
+          />
+          
+          {/* Arrow 1 - on the vertical part (first segment) */}
+          <g transform="translate(60, 100)">
+            <circle cx="0" cy="0" r="16" fill="hsl(var(--primary) / 0.1)" />
+            <ArrowDown className="text-primary/40" style={{ transform: 'translate(-8px, -8px)' }} size={16} />
+          </g>
+          
+          {/* Arrow 2 - on the vertical part (third segment) */}
+          <g transform="translate(1140, 300)">
+            <circle cx="0" cy="0" r="16" fill="hsl(var(--primary) / 0.1)" />
+            <ArrowDown className="text-primary/40" style={{ transform: 'translate(-8px, -8px)' }} size={16} />
+          </g>
+        </svg>
         
-        {/* Right vertical line - in the middle between right photo and edge */}
-        <div className="absolute right-[8%] md:right-[12%] top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/15 to-primary/20" />
-        
-        {/* Arrow on left line - before/above the photos area */}
-        <div className="absolute left-[8%] md:left-[12%] top-[15%] -translate-x-1/2">
-          <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center backdrop-blur-sm">
-            <ArrowDown className="text-primary/60" size={16} />
+        {/* Arrow indicators using absolute positioning */}
+        <div className="absolute left-[5%] top-[25%] -translate-x-1/2 -translate-y-1/2">
+          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+            <ArrowDown className="text-primary/50" size={16} />
           </div>
         </div>
         
-        {/* Arrow on right line - after/below the photos area */}
-        <div className="absolute right-[8%] md:right-[12%] bottom-[15%] translate-x-1/2">
-          <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center backdrop-blur-sm">
-            <ArrowDown className="text-primary/60" size={16} />
+        <div className="absolute right-[5%] bottom-[25%] translate-x-1/2 translate-y-1/2">
+          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+            <ArrowDown className="text-primary/50" size={16} />
           </div>
         </div>
       </div>
@@ -140,6 +113,19 @@ const ServiceShowcase = ({
               </div>
             </div>
             <div className="absolute -top-2 -left-2 w-20 h-20 bg-primary/5 rounded-full blur-2xl" />
+          </div>
+        </div>
+      </div>
+
+      {/* Decorative horizontal line with arrow in center */}
+      <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none hidden md:block">
+        <div className="container-wide">
+          <div className="flex items-center justify-center">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/20 to-primary/10" />
+            <div className="mx-4 w-10 h-10 rounded-full border-2 border-primary/20 flex items-center justify-center bg-background">
+              <ArrowRight className="text-primary/50" size={18} />
+            </div>
+            <div className="flex-1 h-px bg-gradient-to-r from-primary/10 via-primary/20 to-transparent" />
           </div>
         </div>
       </div>
