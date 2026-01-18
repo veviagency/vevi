@@ -40,7 +40,7 @@ const ColdEmailLanding = () => {
         <div className="container-tight">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
-              Why We Only Work With Small Orthodontic Clinics
+              Why We Only Work With Independent Orthodontic Clinics ? 
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The same reason you'd choose a brain surgeon over a general practitioner for neurosurgery.
