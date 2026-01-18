@@ -123,7 +123,7 @@ const ColdEmailLanding = () => {
         <div className="container-tight text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full mb-6">
             <Gift className="text-accent" size={18} />
-            <span className="text-sm font-semibold text-accent">The Offer</span>
+            <span className="text-sm font-semibold text-accent">​Our Promise </span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
@@ -141,7 +141,7 @@ const ColdEmailLanding = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-foreground text-lg">No Pitching</h4>
                   <p className="text-muted-foreground">
-                    We won't try to sell you anything on this call. Promise.
+                    We won't try to sell you anything on this call. Period.
                   </p>
                 </div>
               </div>
