@@ -181,6 +181,15 @@ const ColdEmailLanding = () => {
               </div>
             </div>
           </div>
+
+          <div className="mt-10">
+            <Button variant="hero" size="xl" asChild>
+              <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">
+                Book Your Free 30-Minute Call
+                <ArrowRight size={20} />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
