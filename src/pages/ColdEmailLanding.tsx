@@ -89,8 +89,8 @@ const ColdEmailLanding = () => {
 
       {/* Personal Story Section */}
       <section className="section-padding bg-secondary">
-        <div className="container-tight">
-          <div className="max-w-3xl mx-auto">
+        <div className="container-wide">
+          <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 <Heart className="text-primary" size={24} />
