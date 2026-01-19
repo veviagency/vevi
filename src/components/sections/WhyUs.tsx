@@ -14,7 +14,9 @@ const WhyUs = ({ variant = "default" }: WhyUsProps) => {
               Why We Only Work With Independent Orthodontists
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Just as a brain surgeon specializes rather than performing general surgery, we've chosen to focus exclusively on one thing: helping independent orthodontic clinics grow.
+              Just as a brain surgeon specializes rather than performing general surgery, we've chosen to focus exclusively on one thing:
+              <br />
+              <span className="font-bold">Helping independent orthodontic clinics grow.</span>
             </p>
 
             <div className="space-y-6">
