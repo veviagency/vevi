@@ -101,21 +101,42 @@ const ColdEmailLanding = () => {
             </div>
 
             <div className="bg-card rounded-3xl p-8 md:p-10 border border-border card-elevated">
-              <Quote className="text-primary/20 mb-6" size={48} />
-              <div className="space-y-4 text-lg text-foreground leading-relaxed">
-                <p>
-                  My father struggled with dental issues for years. <br />
-                  It affected everything: how he ate, his confidence, and his quality of life.
-                </p>
-                <p>
-                  When he finally met a dedicated orthodontic team, I watched his life change. <br />
-                  He didn’t just feel better, <br /> 
-                  He got his joy back...
-                </p>
-                <p className="font-medium text-primary">
-                  That’s why we work only with orthodontists like you— <br />
-                  Helping you reach and convert the patients who need your expertise.
-                </p>
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                <div className="flex-1">
+                  <Quote className="text-primary/20 mb-6" size={48} />
+                  <div className="space-y-4 text-lg text-foreground leading-relaxed">
+                    <p>
+                      My father struggled with dental issues for years. <br />
+                      It affected everything: how he ate, his confidence, and his quality of life.
+                    </p>
+                    <p>
+                      When he finally met a dedicated orthodontic team, I watched his life change. <br />
+                      He didn't just feel better, <br /> 
+                      He got his joy back...
+                    </p>
+                    <p className="font-medium text-primary">
+                      That's why we work only with orthodontists like you— <br />
+                      Helping you reach and convert the patients who need your expertise.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center flex-shrink-0">
+                  <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-muted border-2 border-primary/20 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/founder-photo.png" 
+                      alt="Kursat Per"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = '<span class="text-muted-foreground text-sm">Photo</span>';
+                      }}
+                    />
+                  </div>
+                  <div className="mt-4 text-center">
+                    <p className="font-bold text-foreground">Kursat Per</p>
+                    <p className="text-sm text-muted-foreground">Founder, VeVi</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
