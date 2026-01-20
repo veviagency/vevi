@@ -1,4 +1,7 @@
-import { CheckCircle, Building2, Heart } from "lucide-react";
+import { CheckCircle, Building2, Heart, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+
 interface WhyUsProps {
   variant?: "default" | "light";
 }
@@ -55,6 +58,15 @@ const WhyUs = ({
                   </p>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-10">
+              <Button variant="heroOutline" size="xl" asChild>
+                <Link to="/what-we-do">
+                  How We Do It
+                  <ArrowRight size={20} />
+                </Link>
+              </Button>
             </div>
           </div>
 

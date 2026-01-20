@@ -290,10 +290,6 @@ const WhatWeDo = () => {
           </div>
         </div>
       </section>
-
-      {/* Why Us Section */}
-      <WhyUs />
-
     </Layout>;
 };
 export default WhatWeDo;
