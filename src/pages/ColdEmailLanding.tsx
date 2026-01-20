@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Heart, Gift, Quote, Shield, Users, Target } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 const ColdEmailLanding = () => {
-  return <Layout hideNavLinks hideFooter>
+  return <Layout hideNavLinks hideFooter disableLogoLink>
       {/* Hero Section */}
       <section className="section-padding bg-secondary">
         <div className="container-tight text-center">
