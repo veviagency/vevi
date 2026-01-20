@@ -1,10 +1,10 @@
 import { CheckCircle, Building2, Heart } from "lucide-react";
-
 interface WhyUsProps {
   variant?: "default" | "light";
 }
-
-const WhyUs = ({ variant = "default" }: WhyUsProps) => {
+const WhyUs = ({
+  variant = "default"
+}: WhyUsProps) => {
   return <section className={`section-padding ${variant === "light" ? "bg-background" : "bg-secondary"}`}>
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -27,7 +27,7 @@ const WhyUs = ({ variant = "default" }: WhyUsProps) => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Fewer Than 5 Locations</h4>
                   <p className="text-muted-foreground text-sm">
-                    We understand the unique challenges of running a small practice without corporate resources.
+                    We understand the unique challenges of running a local practice without corporate resources.
                   </p>
                 </div>
               </div>
@@ -39,7 +39,7 @@ const WhyUs = ({ variant = "default" }: WhyUsProps) => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Not DSOs or Corporate Chains</h4>
                   <p className="text-muted-foreground text-sm">
-                    Our strategies are designed for practitioners who own and operate their own clinics.
+                    Our strategies are designed for orthodontists who own and operate their own clinics.
                   </p>
                 </div>
               </div>
@@ -51,7 +51,7 @@ const WhyUs = ({ variant = "default" }: WhyUsProps) => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">US-Based Practices Only</h4>
                   <p className="text-muted-foreground text-sm">
-                    Deep understanding of the American orthodontic market and patient expectations.
+                    Deep understanding of the US orthodontic market and patient expectations.
                   </p>
                 </div>
               </div>
@@ -66,15 +66,10 @@ const WhyUs = ({ variant = "default" }: WhyUsProps) => {
               </blockquote>
               <div className="flex items-center gap-5">
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-muted flex items-center justify-center overflow-hidden border-2 border-primary/20">
-                  <img 
-                    src="/lovable-uploads/founder-photo.png" 
-                    alt="Kursat Per"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = '<span class="text-muted-foreground text-sm">Photo</span>';
-                    }}
-                  />
+                  <img src="/lovable-uploads/founder-photo.png" alt="Kursat Per" className="w-full h-full object-cover" onError={e => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement!.innerHTML = '<span class="text-muted-foreground text-sm">Photo</span>';
+                }} />
                 </div>
                 <div>
                   <p className="font-semibold text-foreground text-lg md:text-xl">Kursat Per - VeVi</p>
