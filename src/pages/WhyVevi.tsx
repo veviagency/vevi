@@ -111,8 +111,8 @@ const WhyVevi = () => {
               <h3 className="text-xl font-serif font-bold text-foreground mb-2">
                 Independent Practices Deserve Support
               </h3>
-              <p className="text-muted-foreground">
-                Small clinics provide care that corporate chains often can't match.
+              <p className="text-muted-foreground text-center">
+                Independent clinics bring a level of attention corporate chains often can’t match. We help you grow with systems designed for your scale, not theirs.
               </p>
             </div>
           </div>
