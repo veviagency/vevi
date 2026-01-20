@@ -7,7 +7,7 @@ const WhyVevi = () => {
       <section className="section-padding bg-secondary">
         <div className="container-tight text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 animate-slide-up">
-            Why We Chose Orthodontics
+            Why We Only Work With Orthodontists      
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{
           animationDelay: "0.1s"
