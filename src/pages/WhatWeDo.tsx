@@ -1,17 +1,17 @@
 import Layout from "@/components/layout/Layout";
 import WhyUs from "@/components/sections/WhyUs";
 import { MessageSquare, Phone, Target, CheckCircle, Shield, Zap, Users, BarChart } from "lucide-react";
-
 const WhatWeDo = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero */}
       <section className="section-padding bg-secondary">
         <div className="container-tight text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 animate-slide-up">
             What We Do
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <p className="text-lg text-muted-foreground max-w-5xl mx-auto animate-slide-up" style={{
+          animationDelay: "0.1s"
+        }}>
             A complete system designed specifically for orthodontic clinics — from first website visit to booked consultation.
           </p>
         </div>
@@ -294,8 +294,6 @@ const WhatWeDo = () => {
       {/* Why Us Section */}
       <WhyUs />
 
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default WhatWeDo;
