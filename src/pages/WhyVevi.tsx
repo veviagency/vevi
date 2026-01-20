@@ -100,7 +100,7 @@ const WhyVevi = () => {
                 Technology Should Serve People
               </h3>
               <p className="text-muted-foreground">
-                AI and automation should enhance human connection, not replace it.
+                Automation should remove friction, not relationships. We use AI to support faster follow-up and smoother patient journeys—while keeping care human.
               </p>
             </div>
 
