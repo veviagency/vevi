@@ -1,17 +1,17 @@
 import Layout from "@/components/layout/Layout";
 import WhyUs from "@/components/sections/WhyUs";
 import { Heart, Quote } from "lucide-react";
-
 const WhyVevi = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero */}
       <section className="section-padding bg-secondary">
         <div className="container-tight text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 animate-slide-up">
             Why We Chose Orthodontics
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{
+          animationDelay: "0.1s"
+        }}>
             This isn't just a business decision. It's personal.
           </p>
         </div>
@@ -50,14 +50,10 @@ const WhyVevi = () => {
 
             {/* Video */}
             <div className="rounded-2xl overflow-hidden mb-12 border border-border">
-              <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/ipZ_die5N7Q"
-                  title="Why I Started Vevi"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+              <div className="relative w-full" style={{
+              paddingBottom: '177.78%'
+            }}>
+                <iframe className="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/ipZ_die5N7Q" title="Why I Started Vevi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
               </div>
             </div>
 
@@ -92,7 +88,7 @@ const WhyVevi = () => {
                 Specialization Matters
               </h3>
               <p className="text-muted-foreground">
-                The best results come from focused expertise, not generalist approaches.
+                Real results come from deep focus. By working only with orthodontic clinics, we build strategies that fit your world—down to the details.
               </p>
             </div>
 
@@ -126,8 +122,6 @@ const WhyVevi = () => {
       {/* Why Us Section */}
       <WhyUs variant="light" />
 
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default WhyVevi;
