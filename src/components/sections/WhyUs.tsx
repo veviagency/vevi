@@ -60,7 +60,7 @@ const WhyUs = ({
               </div>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-10 flex justify-center lg:justify-start">
               <Button variant="heroOutline" size="xl" asChild>
                 <Link to="/what-we-do">
                   How We Do It
