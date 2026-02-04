@@ -84,7 +84,8 @@ const WhyUs = ({
                 }} />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground text-lg md:text-xl">Kursat Per - VeVi</p>
+                  <p className="font-semibold text-foreground text-lg md:text-xl">Kursat Per</p>
+                  <p className="text-muted-foreground text-sm">Founder, VeVi</p>
                 </div>
               </div>
             </div>
