@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
-import WhyUs from "@/components/sections/WhyUs";
-import { MessageSquare, Phone, Target, CheckCircle, Shield, Zap, Users, BarChart } from "lucide-react";
+import { MessageSquare, Phone, Target, CheckCircle, Shield, Zap, Users, BarChart, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 const WhatWeDo = () => {
   return <Layout>
       {/* Hero */}
@@ -288,6 +289,18 @@ const WhatWeDo = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Button Section */}
+      <section className="section-padding bg-secondary">
+        <div className="container-wide flex justify-center">
+          <Button variant="hero" size="xl" asChild>
+            <a href="https://app.lemcal.com/@vevi-agency/30-minutes-demo" target="_blank" rel="noopener noreferrer">
+              Book Your Free Consultation
+              <ArrowRight size={20} />
+            </a>
+          </Button>
         </div>
       </section>
     </Layout>;
