@@ -60,8 +60,8 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="bg-card rounded-2xl p-8 card-elevated border border-border animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-card rounded-2xl p-8 card-elevated border border-border animate-slide-from-right"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Icon */}
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
