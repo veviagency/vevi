@@ -1,6 +1,7 @@
 import { MessageSquare, Phone, Target, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useAnimateOnView } from "@/hooks/use-animate-on-view";
 
 const services = [
   {
@@ -41,6 +42,43 @@ const services = [
   },
 ];
 
+const ServiceCard = ({ service, index }: { service: typeof services[0]; index: number }) => {
+  const { ref, hasAnimated } = useAnimateOnView();
+
+  return (
+    <div
+      ref={ref}
+      className={`bg-card rounded-2xl p-8 card-elevated border border-border ${
+        hasAnimated ? "animate-slide-from-right" : "opacity-0"
+      }`}
+      style={{ animationDelay: `${index * 0.15}s` }}
+    >
+      {/* Icon */}
+      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+        <service.icon className="text-primary" size={28} />
+      </div>
+
+      {/* Content */}
+      <h3 className="text-xl font-serif font-bold text-foreground mb-3">
+        {service.title}
+      </h3>
+      <p className="text-muted-foreground mb-6 leading-relaxed">
+        {service.description}
+      </p>
+
+      {/* Features */}
+      <ul className="space-y-3">
+        {service.features.map((feature) => (
+          <li key={feature} className="flex items-center gap-3 text-sm text-foreground">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 const Services = () => {
   return (
     <section className="section-padding bg-background">
@@ -58,34 +96,7 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="bg-card rounded-2xl p-8 card-elevated border border-border animate-slide-from-right"
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                <service.icon className="text-primary" size={28} />
-              </div>
-
-              {/* Content */}
-              <h3 className="text-xl font-serif font-bold text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {service.description}
-              </p>
-
-              {/* Features */}
-              <ul className="space-y-3">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-sm text-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ServiceCard key={service.title} service={service} index={index} />
           ))}
         </div>
 
