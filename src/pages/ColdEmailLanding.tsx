@@ -1,6 +1,57 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Heart, Gift, Quote, Shield, Users, Target } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import { useAnimateOnView } from "@/hooks/use-animate-on-view";
+
+// Animated card wrapper for the specialization cards
+const AnimatedCard = ({ 
+  children, 
+  index 
+}: { 
+  children: React.ReactNode; 
+  index: number;
+}) => {
+  const { ref, hasAnimated } = useAnimateOnView();
+  
+  return (
+    <div
+      ref={ref}
+      className={hasAnimated ? "animate-slide-from-right" : "opacity-0"}
+      style={{ animationDelay: `${index * 0.15}s` }}
+    >
+      {children}
+    </div>
+  );
+};
+
+// Animated testimonial wrapper
+const AnimatedTestimonialElement = ({ 
+  children, 
+  direction,
+  delay = 0
+}: { 
+  children: React.ReactNode; 
+  direction: "from-left" | "from-right";
+  delay?: number;
+}) => {
+  const { ref, hasAnimated } = useAnimateOnView();
+  
+  return (
+    <div
+      ref={ref}
+      className={hasAnimated 
+        ? direction === "from-left" 
+          ? "animate-slide-from-left" 
+          : "animate-slide-from-right"
+        : "opacity-0"
+      }
+      style={{ animationDelay: `${delay}s` }}
+    >
+      {children}
+    </div>
+  );
+};
+
 const ColdEmailLanding = () => {
   return <Layout hideNavLinks hideFooter disableLogoLink>
       {/* Hero Section */}
@@ -48,41 +99,47 @@ const ColdEmailLanding = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-card rounded-2xl p-8 card-elevated border border-border text-center">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <Target className="text-primary" size={28} />
+            <AnimatedCard index={0}>
+              <div className="bg-card rounded-2xl p-8 card-elevated border border-border text-center h-full">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <Target className="text-primary" size={28} />
+                </div>
+                <h3 className="text-xl font-serif font-bold text-foreground mb-3">
+                  Laser Focus
+                </h3>
+                <p className="text-muted-foreground">
+                  We don't do general dental marketing. Every strategy, every tool, every piece of copy is designed specifically for orthodontic practices.
+                </p>
               </div>
-              <h3 className="text-xl font-serif font-bold text-foreground mb-3">
-                Laser Focus
-              </h3>
-              <p className="text-muted-foreground">
-                We don't do general dental marketing. Every strategy, every tool, every piece of copy is designed specifically for orthodontic practices.
-              </p>
-            </div>
+            </AnimatedCard>
 
-            <div className="bg-card rounded-2xl p-8 card-elevated border border-border text-center">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <Users className="text-primary" size={28} />
+            <AnimatedCard index={1}>
+              <div className="bg-card rounded-2xl p-8 card-elevated border border-border text-center h-full">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <Users className="text-primary" size={28} />
+                </div>
+                <h3 className="text-xl font-serif font-bold text-foreground mb-3">
+                  Independent Practices
+                </h3>
+                <p className="text-muted-foreground">
+                  We understand the unique challenges of running a clinic without corporate resources — and we've built solutions specifically for you.
+                </p>
               </div>
-              <h3 className="text-xl font-serif font-bold text-foreground mb-3">
-                Independent Practices
-              </h3>
-              <p className="text-muted-foreground">
-                We understand the unique challenges of running a clinic without corporate resources — and we've built solutions specifically for you.
-              </p>
-            </div>
+            </AnimatedCard>
 
-            <div className="bg-card rounded-2xl p-8 card-elevated border border-border text-center">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <Shield className="text-primary" size={28} />
+            <AnimatedCard index={2}>
+              <div className="bg-card rounded-2xl p-8 card-elevated border border-border text-center h-full">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <Shield className="text-primary" size={28} />
+                </div>
+                <h3 className="text-xl font-serif font-bold text-foreground mb-3">
+                  Deep Expertise
+                </h3>
+                <p className="text-muted-foreground">
+                  When you only serve one type of client, you understand their world intimately. We know orthodontics like you know smiles.
+                </p>
               </div>
-              <h3 className="text-xl font-serif font-bold text-foreground mb-3">
-                Deep Expertise
-              </h3>
-              <p className="text-muted-foreground">
-                When you only serve one type of client, you understand their world intimately. We know orthodontics like you know smiles.
-              </p>
-            </div>
+            </AnimatedCard>
           </div>
         </div>
       </section>
@@ -222,36 +279,40 @@ const ColdEmailLanding = () => {
       <section className="section-padding bg-secondary">
         <div className="container-wide">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-            {/* Photo placeholder - aligned with footer logo */}
-            <div className="flex flex-col items-center gap-3 flex-shrink-0">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-card border-4 border-primary/20 flex items-center justify-center overflow-hidden card-elevated">
-                <img alt="In his office, with Dr. Murat Kaptac" className="w-full h-full object-cover" onError={e => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                target.parentElement!.innerHTML = '<span class="text-primary font-semibold text-6xl">MK</span>';
-              }} src="/lovable-uploads/69a88413-4232-4b17-b2c5-f0927dbec0ae.jpg" />
+            {/* Photo placeholder - animated from right */}
+            <AnimatedTestimonialElement direction="from-right" delay={0}>
+              <div className="flex flex-col items-center gap-3 flex-shrink-0">
+                <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-card border-4 border-primary/20 flex items-center justify-center overflow-hidden card-elevated">
+                  <img alt="In his office, with Dr. Murat Kaptac" className="w-full h-full object-cover" onError={e => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.parentElement!.innerHTML = '<span class="text-primary font-semibold text-6xl">MK</span>';
+                }} src="/lovable-uploads/69a88413-4232-4b17-b2c5-f0927dbec0ae.jpg" />
+                </div>
+                <p className="text-sm text-muted-foreground text-center italic">
+                  In his office, with Dr. Murat Kaptac.
+                </p>
               </div>
-              <p className="text-sm text-muted-foreground text-center italic">
-                In his office, with Dr. Murat Kaptac.
-              </p>
-            </div>
+            </AnimatedTestimonialElement>
 
-            {/* Testimonial card */}
-            <div className="bg-card rounded-3xl p-8 md:p-12 border border-border card-elevated flex-1">
-              <Quote className="text-primary/20 mb-6" size={40} />
-              <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8 text-justify">
-                Because of how competitive our market is, I've worked with many agencies and freelancers over the years. It's easy to tell the average providers from the ones who consistently go the extra mile. With VeVi, I saw that firsthand: attention to detail, constant learning (even from competitors), and a genuine client-first mindset. It was a pleasure working together.
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-primary font-semibold text-lg">MK</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">Dr. Murat Kaptac</p>
-                  <p className="text-sm text-muted-foreground">Founder - MK Aligners</p>
+            {/* Testimonial card - animated from left with 0.5s delay */}
+            <AnimatedTestimonialElement direction="from-left" delay={0.5}>
+              <div className="bg-card rounded-3xl p-8 md:p-12 border border-border card-elevated flex-1">
+                <Quote className="text-primary/20 mb-6" size={40} />
+                <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8 text-justify">
+                  Because of how competitive our market is, I've worked with many agencies and freelancers over the years. It's easy to tell the average providers from the ones who consistently go the extra mile. With VeVi, I saw that firsthand: attention to detail, constant learning (even from competitors), and a genuine client-first mindset. It was a pleasure working together.
+                </blockquote>
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center">
+                    <span className="text-primary font-semibold text-lg">MK</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">Dr. Murat Kaptac</p>
+                    <p className="text-sm text-muted-foreground">Founder - MK Aligners</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimatedTestimonialElement>
           </div>
         </div>
       </section>
