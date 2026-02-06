@@ -1,7 +1,32 @@
 import Layout from "@/components/layout/Layout";
 import { MessageSquare, Phone, Target, CheckCircle, Shield, Zap, Users, BarChart, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAnimateOnView } from "@/hooks/use-animate-on-view";
 
+// Animated demo wrapper component
+const AnimatedDemo = ({ 
+  children, 
+  direction 
+}: { 
+  children: React.ReactNode; 
+  direction: "from-left" | "from-right";
+}) => {
+  const { ref, hasAnimated } = useAnimateOnView();
+  
+  return (
+    <div
+      ref={ref}
+      className={hasAnimated 
+        ? direction === "from-left" 
+          ? "animate-slide-from-left" 
+          : "animate-slide-from-right"
+        : "opacity-0"
+      }
+    >
+      {children}
+    </div>
+  );
+};
 const WhatWeDo = () => {
   return <Layout>
       {/* Hero */}
@@ -74,26 +99,28 @@ const WhatWeDo = () => {
               </div>
             </div>
 
-            <div className="bg-secondary rounded-3xl p-8 md:p-10 border border-border">
-              <div className="space-y-4">
-                <div className="bg-card rounded-2xl p-4 border border-border shadow-sm">
-                  <p className="text-sm text-muted-foreground mb-1">Visitor</p>
-                  <p className="text-foreground">Hi! I'm interested in Invisalign for my teenager. What's the process like?</p>
-                </div>
-                <div className="bg-primary/5 rounded-2xl p-4 border border-primary/20 ml-8">
-                  <p className="text-sm text-primary mb-1">OrthoBot</p>
-                  <p className="text-foreground">Great question! Teen Invisalign is one of our most popular treatments. The process typically starts with a free consultation where Dr. Smith evaluates your teen's smile and creates a custom treatment plan. Most teens love that the aligners are nearly invisible. Would you like me to share more about what to expect?</p>
-                </div>
-                <div className="bg-card rounded-2xl p-4 border border-border shadow-sm">
-                  <p className="text-sm text-muted-foreground mb-1">Visitor</p>
-                  <p className="text-foreground">Yes please! And how long does treatment usually take?</p>
-                </div>
-                <div className="bg-primary/5 rounded-2xl p-4 border border-primary/20 ml-8">
-                  <p className="text-sm text-primary mb-1">OrthoBot</p>
-                  <p className="text-foreground">Most teen cases take 12-18 months, but it varies based on complexity. Dr. Smith can give you a specific timeline during the consultation. By the way, I'd love to have our team reach out with some helpful info — could I grab your name?</p>
+            <AnimatedDemo direction="from-left">
+              <div className="bg-secondary rounded-3xl p-8 md:p-10 border border-border">
+                <div className="space-y-4">
+                  <div className="bg-card rounded-2xl p-4 border border-border shadow-sm">
+                    <p className="text-sm text-muted-foreground mb-1">Visitor</p>
+                    <p className="text-foreground">Hi! I'm interested in Invisalign for my teenager. What's the process like?</p>
+                  </div>
+                  <div className="bg-primary/5 rounded-2xl p-4 border border-primary/20 ml-8">
+                    <p className="text-sm text-primary mb-1">OrthoBot</p>
+                    <p className="text-foreground">Great question! Teen Invisalign is one of our most popular treatments. The process typically starts with a free consultation where Dr. Smith evaluates your teen's smile and creates a custom treatment plan. Most teens love that the aligners are nearly invisible. Would you like me to share more about what to expect?</p>
+                  </div>
+                  <div className="bg-card rounded-2xl p-4 border border-border shadow-sm">
+                    <p className="text-sm text-muted-foreground mb-1">Visitor</p>
+                    <p className="text-foreground">Yes please! And how long does treatment usually take?</p>
+                  </div>
+                  <div className="bg-primary/5 rounded-2xl p-4 border border-primary/20 ml-8">
+                    <p className="text-sm text-primary mb-1">OrthoBot</p>
+                    <p className="text-foreground">Most teen cases take 12-18 months, but it varies based on complexity. Dr. Smith can give you a specific timeline during the consultation. By the way, I'd love to have our team reach out with some helpful info — could I grab your name?</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimatedDemo>
           </div>
         </div>
       </section>
@@ -103,36 +130,38 @@ const WhatWeDo = () => {
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 lg:order-1">
-              <div className="bg-card rounded-3xl p-8 md:p-10 border border-border card-elevated">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                    <Phone className="text-primary-foreground" size={28} />
+              <AnimatedDemo direction="from-right">
+                <div className="bg-card rounded-3xl p-8 md:p-10 border border-border card-elevated">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                      <Phone className="text-primary-foreground" size={28} />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">OrthoCall</p>
+                      <p className="text-sm text-muted-foreground">Calling new lead...</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-foreground">OrthoCall</p>
-                    <p className="text-sm text-muted-foreground">Calling new lead...</p>
-                  </div>
-                </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 p-3 bg-secondary rounded-lg">
-                    <Zap className="text-primary" size={18} />
-                    <span className="text-sm text-foreground">Lead submitted form 2 minutes ago</span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 bg-secondary rounded-lg">
-                    <Phone className="text-primary" size={18} />
-                    <span className="text-sm text-foreground">Automatic call initiated</span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 bg-secondary rounded-lg">
-                    <Users className="text-primary" size={18} />
-                    <span className="text-sm text-foreground">Natural voice conversation</span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg border border-primary/20">
-                    <CheckCircle className="text-primary" size={18} />
-                    <span className="text-sm font-medium text-primary">Consultation booked for Tuesday 2pm</span>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 p-3 bg-secondary rounded-lg">
+                      <Zap className="text-primary" size={18} />
+                      <span className="text-sm text-foreground">Lead submitted form 2 minutes ago</span>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-secondary rounded-lg">
+                      <Phone className="text-primary" size={18} />
+                      <span className="text-sm text-foreground">Automatic call initiated</span>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-secondary rounded-lg">
+                      <Users className="text-primary" size={18} />
+                      <span className="text-sm text-foreground">Natural voice conversation</span>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg border border-primary/20">
+                      <CheckCircle className="text-primary" size={18} />
+                      <span className="text-sm font-medium text-primary">Consultation booked for Tuesday 2pm</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </AnimatedDemo>
             </div>
 
             <div className="order-1 lg:order-2">
@@ -234,60 +263,62 @@ const WhatWeDo = () => {
               </div>
             </div>
 
-            <div className="bg-secondary rounded-3xl p-8 md:p-10 border border-border">
-              <div className="text-center mb-8">
-                <BarChart className="text-primary mx-auto mb-4" size={48} />
-                <h3 className="text-xl font-serif font-bold text-foreground mb-2">
-                  Complete Patient Journey
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  From ad click to booked consultation
-                </p>
-              </div>
+            <AnimatedDemo direction="from-left">
+              <div className="bg-secondary rounded-3xl p-8 md:p-10 border border-border">
+                <div className="text-center mb-8">
+                  <BarChart className="text-primary mx-auto mb-4" size={48} />
+                  <h3 className="text-xl font-serif font-bold text-foreground mb-2">
+                    Complete Patient Journey
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    From ad click to booked consultation
+                  </p>
+                </div>
 
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
-                    1
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
+                      1
+                    </div>
+                    <div className="flex-1 bg-card rounded-lg p-3 border border-border">
+                      <p className="text-sm font-medium text-foreground">Patient sees targeted ad</p>
+                    </div>
                   </div>
-                  <div className="flex-1 bg-card rounded-lg p-3 border border-border">
-                    <p className="text-sm font-medium text-foreground">Patient sees targeted ad</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
+                      2
+                    </div>
+                    <div className="flex-1 bg-card rounded-lg p-3 border border-border">
+                      <p className="text-sm font-medium text-foreground">Clicks to custom landing page</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
-                    2
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
+                      3
+                    </div>
+                    <div className="flex-1 bg-card rounded-lg p-3 border border-border">
+                      <p className="text-sm font-medium text-foreground">OrthoBot engages & captures info</p>
+                    </div>
                   </div>
-                  <div className="flex-1 bg-card rounded-lg p-3 border border-border">
-                    <p className="text-sm font-medium text-foreground">Clicks to custom landing page</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
+                      4
+                    </div>
+                    <div className="flex-1 bg-card rounded-lg p-3 border border-border">
+                      <p className="text-sm font-medium text-foreground">OrthoCall books consultation</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
-                    3
-                  </div>
-                  <div className="flex-1 bg-card rounded-lg p-3 border border-border">
-                    <p className="text-sm font-medium text-foreground">OrthoBot engages & captures info</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
-                    4
-                  </div>
-                  <div className="flex-1 bg-card rounded-lg p-3 border border-border">
-                    <p className="text-sm font-medium text-foreground">OrthoCall books consultation</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-semibold text-sm">
-                    ✓
-                  </div>
-                  <div className="flex-1 bg-accent/10 rounded-lg p-3 border border-accent/30">
-                    <p className="text-sm font-medium text-foreground">New patient in your chair</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-semibold text-sm">
+                      ✓
+                    </div>
+                    <div className="flex-1 bg-accent/10 rounded-lg p-3 border border-accent/30">
+                      <p className="text-sm font-medium text-foreground">New patient in your chair</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </AnimatedDemo>
           </div>
         </div>
       </section>
